@@ -13,10 +13,8 @@
 '''
 
 numbers_str = input('Введите элементы списка через запятую: ')
+numbers_list = list(numbers_str.replace(',', ' ').replace(';', ' ').replace('/', ' ').split())
+print('Результат:',set(numbers_list))
 
-numbers_list = list(numbers_str)
 
-
-
-print(numbers_list)
 
