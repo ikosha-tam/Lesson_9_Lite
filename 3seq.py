@@ -9,10 +9,8 @@
 Предлагаю проверить работу программы на разных списках, чтобы убедиться что она работает верно
 '''
 
-
 first_str = input('Введите элементы 1-го списка через запятую: ')
 second_str = input('Введите элементы 2-го списка через запятую: ')
 first_list = list(first_str.replace(',', ' ').replace(';', ' ').replace('/', ' ').split())
 second_list = list(second_str.replace(',', ' ').replace(';', ' ').replace('/', ' ').split())
-print('Результат:',set(first_list)-set(second_list))
-
+print('Результат:', set(first_list) - set(second_list))

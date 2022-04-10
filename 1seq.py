@@ -10,9 +10,9 @@
 Вывод: [2, 4, 5]
 '''
 
-number_elements_list = int(input('Введите количество элементов: '))
+number_elements = int(input('Введите количество элементов: '))
 num_list = []
-for element_list in range(number_elements_list):
+for element_list in range(number_elements):
     num = int(input(f'Введите {element_list + 1} элемент: '))
     num_list.append(num)
 num_list.sort()

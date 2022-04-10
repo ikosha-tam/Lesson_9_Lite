@@ -12,9 +12,12 @@
  запятую, точку с запятой, слэш (1,2,3 1;2;3 1/2/3), но только какой то один 1,2;3/4 - так нельзя
 '''
 
+
 numbers_str = input('Введите элементы списка через запятую: ')
-numbers_list = list(numbers_str.replace(',', ' ').replace(';', ' ').replace('/', ' ').split())
-print('Результат:',set(numbers_list))
-
-
+numbers = numbers_str.replace(',', ' ').replace(';', ' ').replace('/', ' ').split()
+result = []
+for num in numbers:
+    if numbers.count(num) == 1:
+        result.append(num)
+print('Результат:',result)
 
