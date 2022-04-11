@@ -85,12 +85,12 @@ months = {
     '12': 'декабря',
 }
 name_list = list(birthdays_dict.keys())
-random_name_list = random.sample(name_list, 5)
 print('Вводите дату в формате (dd.mm.yyyy)')
-number_correct_answers = 0
-number_incorrect_answers =0
 repit_quiz = 'Y'
 while repit_quiz == 'Y':
+    random_name_list = random.sample(name_list, 5)
+    number_correct_answers = 0
+    number_incorrect_answers = 0
     for quest in random_name_list:
         data = input(f'{quest}:')
         if data == birthdays_dict[quest]:
@@ -104,7 +104,5 @@ while repit_quiz == 'Y':
     print('-'*60)
     print('количество правильных ответов -',number_correct_answers)
     print('количество неверных ответов -',number_incorrect_answers)
-    number_correct_answers = 0
-    number_incorrect_answers =0
-    repit_quiz = input('Начать снова? Введите - Y:')
+    repit_quiz = input('Начать снова? да - Y, нет - ENTER:')
 print('До встречи!!!')
