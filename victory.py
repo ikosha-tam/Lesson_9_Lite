@@ -23,16 +23,10 @@ print(result) # [5, 1]
 В конце считаем количество правильных и неправильных ответов и предлагаем начать снова
 '''
 
-'''
-import random
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-# 2 - количество случайных элементов
-result = random.sample(numbers, 5)
-print(result) # [5, 1]
-'''
 
+import random
 birthdays_dict = {
-    'Юрий Алексеевич Гарин': '09.03.1934',
+    'Юрий Алексеевич Гагарин': '09.03.1934',
     'Александр Сергеевич Пушкин': '06.06.1799',
     'Владимир Ильич Ленин': '22.04.1870',
     'Сергей Павлович Королёв': '12.01.1907',
@@ -43,16 +37,6 @@ birthdays_dict = {
     'Альберт Эйнштейн': '14.03.1879',
     'Роджер Уотерс': '06.09.1943'
 }
-
-name_list = list(birthdays_dict.keys())
-print(name_list, type(name_list))
-birthday_list = list(birthdays_dict.values())
-print(birthday_list, type(birthday_list))
-
-print(birthdays_dict.items())
-
-data = '06.09.1943'
-
 days = {
     '01': 'первое',
     '02': 'второе',
@@ -86,7 +70,6 @@ days = {
     '30': 'тридцатое',
     '31': 'тридцать первое'
 }
-
 months = {
     '01': 'января',
     '02': 'февраля',
@@ -101,7 +84,27 @@ months = {
     '11': 'ноября',
     '12': 'декабря',
 }
-
-day, month, year = data.split('.')
-
-print(days[day], months[month], year, 'года')
+name_list = list(birthdays_dict.keys())
+random_name_list = random.sample(name_list, 5)
+print('Вводите дату в формате (dd.mm.yyyy)')
+number_correct_answers = 0
+number_incorrect_answers =0
+repit_quiz = 'Y'
+while repit_quiz == 'Y':
+    for quest in random_name_list:
+        data = input(f'{quest}:')
+        if data == birthdays_dict[quest]:
+            print('    ВЕРНО!')
+            number_correct_answers += 1
+        else:
+            data = birthdays_dict[quest]
+            day, month, year = data.split('.')
+            print('    НЕВЕРНО! Правильный ответ:',days[day], months[month], year, 'года')
+            number_incorrect_answers += 1
+    print('-'*60)
+    print('количество правильных ответов -',number_correct_answers)
+    print('количество неверных ответов -',number_incorrect_answers)
+    number_correct_answers = 0
+    number_incorrect_answers =0
+    repit_quiz = input('Начать снова? Введите - Y:')
+print('До встречи!!!')
